@@ -6,7 +6,7 @@ class Header extends Component{
   render(){
       return(
         <div>
-        <div> siphwes map {navbar}</div>
+        <div> 'Free 5 kms in manchester'  {navbar}</div>
         <div> {navbar} </div>
         </div>
 )
