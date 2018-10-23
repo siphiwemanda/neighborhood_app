@@ -12,12 +12,28 @@ class Map extends Component {
 
 
    return(
-      <div>
+      <div className="Mapdiv">
         <GoogleMapExample
-          containerElement={ <div style={{ height: `100%`, width: '100%' }} /> }
-          mapElement={ <div style={{ height: `100%` }} /> }
-        />
-      </div>
+        loadingElement={
+           <div
+             style={{ height: `100%` }}
+           />
+         }
+         containerElement={
+           <div
+             style={{ height: `100vh` }}
+             role="application"
+             tabIndex="0"
+             aria-label="Map with locations of Christmas Markets"
+           />
+         }
+         mapElement={
+           <div
+            style={{ height: `100%` }}
+           />
+         }
+       />
+     </div>
    );
    }
 };
