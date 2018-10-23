@@ -4,6 +4,8 @@
   margin: 0;
   position:relative;
   overflow-x: hidden;
+  height: 100vh;
+  width: 100vw;
 }
 
 .App-logo {
@@ -12,14 +14,14 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #e1f2ee;
   min-height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: black;
 }
 
 .App-link {
@@ -40,13 +42,57 @@
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 50px;
-  background-color: #282c34;
+  height: 2%;
+  background-color: #e1f2ee;
   min-height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: black;
+}
+
+.nav{
+  top: 0;
+  left: 0;
+  list-style-type: none;
+   margin: 0;
+   padding: 0;
+   width: 25%;
+   background-color: #e1f2ee;
+   position: fixed;
+   height: 100%;
+}
+
+
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #ffd5ff;
+    margin: 6px 0;
+    z-index: 1;
+    top: 0;
+    left: 0;
+
+}
+
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+}
+
+
+.mainbody{
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  height: 100%;
 }

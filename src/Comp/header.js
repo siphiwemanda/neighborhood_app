@@ -7,7 +7,7 @@ class Header extends Component{
       return(
         <div>
         <div> 'Free 5 kms in manchester'  {navbar}</div>
-        <div> {navbar} </div>
+        
         </div>
 )
   }

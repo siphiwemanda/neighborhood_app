@@ -15,3 +15,12 @@ get lat long values
 
 refreaccnes
 https://medium.com/@yelstin.fernandes/render-a-map-component-using-react-google-maps-5f7fb3e418bb
+https://stackoverflow.com/questions/22639534/pass-props-to-parent-component-in-react-js
+
+https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_menu_icon_js (hamburguer menu)
+
+const bircfeildpark  = {lat:53.451326 , lng:-2.211822 }
+const marker = new google.maps.Marker({
+  position: bircfeildpark,
+  map: map,
+  title: "bircfeildpark"

@@ -9,17 +9,12 @@ class Map extends Component {
       >
       </GoogleMap>
    ));
-   const bircfeildpark  = {lat:53.451326 , lng:-2.211822 }
-   const marker = new google.maps.Marker({
-     position: bircfeildpark,
-     map: map,
-     title: "bircfeildpark"
-   });
+
 
    return(
       <div>
         <GoogleMapExample
-          containerElement={ <div style={{ height: `579px`, width: '100px%' }} /> }
+          containerElement={ <div style={{ height: `100%`, width: '100%' }} /> }
           mapElement={ <div style={{ height: `100%` }} /> }
         />
       </div>

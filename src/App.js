@@ -4,20 +4,38 @@ import Map from './Comp/Map.js'
 import './Comp/places'
 import Header from './Comp/header'
 import Footer from './Comp/footer'
+import Navbar from './Comp/navbar'
 
 class App extends Component {
+
+state ={
+  locationArray: [],
+  selectindex:0,
+}
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
+      <header className="App-header">
         <Header/>
-
         </header>
-        < Map className='map'/>
+
+        <div className="mainbody">
+        <div>
+         <Navbar/>
+        </div>
+        <div>
+        < Map/>
+        </div>
+        </div>
+
+
         <footer className = 'App-footer'>
         <Footer/>
         </footer>
-      </div>
+        </div>
+
+
     );
   }
 }
