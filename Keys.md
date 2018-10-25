@@ -24,3 +24,45 @@ const marker = new google.maps.Marker({
   position: bircfeildpark,
   map: map,
   title: "bircfeildpark"
+
+
+
+
+
+  class Map extends Component {
+     render() {
+     const GoogleMapExample = withGoogleMap(props => (
+        <GoogleMap
+          defaultCenter = { { lat: 53.480759, lng: -2.242631 } }
+          defaultZoom = { 12 }
+        >
+        </GoogleMap>
+     ));
+
+
+     return(
+        <div className="Mapdiv">
+          <GoogleMapExample
+          loadingElement={
+             <div
+               style={{ height: `100%` }}
+             />
+           }
+           containerElement={
+             <div
+               style={{ height: `100vh` }}
+               role="application"
+               tabIndex="0"
+               aria-label="Map with locations of Christmas Markets"
+             />
+           }
+           mapElement={
+             <div
+              style={{ height: `100%` }}
+             />
+           }
+         />
+       </div>
+     );
+     }
+  };

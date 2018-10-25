@@ -6,14 +6,9 @@ class Navbar extends Component{
     console.log('props', this.props)
 
     return(
-      <header className="nav">
-      <nav>
-      <div className = "hamburguer">
-      <div className="container" onClick="myFunction(this)">
-      <div className="bar1"></div>
-      <div className="bar2"></div>
-      <div className="bar3"></div>
-      </div>
+      <div className="nav">
+
+
 
       <ol className ="contactlist">
           {this.props.parks.map((park)=>(
@@ -40,8 +35,8 @@ class Navbar extends Component{
   </ol>
 
       </div>
-      </nav>
-      </header>
+
+    
 
 
     )

@@ -52,26 +52,25 @@ this.setState((state)=>({
   render() {
     return (
       <div className="App">
+
       <header className="App-header">
         <Header/>
         </header>
 
-        <div className="mainbody">
-        <div>
-         <Navbar
-         onDelparks ={this.removepark}
-         parks={this.state.parks}/>
-        </div>
-        <div style={{ height: `100%` }}>
-        < Map/>
-        </div>
-        </div>
+<div className ="wrapper">
 
+            <Navbar  parks = {this.state.parks}
+                    onDelparks ={this.removepark}>
+            </Navbar>
 
-        <footer className = 'App-footer'>
-        <Footer/>
-        </footer>
-        </div>
+            <Map>
+            </Map>
+</div>
+
+            <Footer>
+            </Footer>
+
+</div>
 
 
     );

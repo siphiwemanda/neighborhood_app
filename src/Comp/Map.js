@@ -1,39 +1,22 @@
 import React, { Component } from 'react';
-import { withGoogleMap, GoogleMap } from 'react-google-maps';
+import { withGoogleMap, GoogleMap, Marker } from 'react-google-maps';
+
 class Map extends Component {
    render() {
-   const GoogleMapExample = withGoogleMap(props => (
+     const GoogleMapExample = withGoogleMap(props => (
       <GoogleMap
-        defaultCenter = { { lat: 53.480759, lng: -2.242631 } }
-        defaultZoom = { 12 }
+        defaultCenter = { { lat: 53.480759, lng: -2.242631} }
+        defaultZoom = { 13 }
       >
       </GoogleMap>
    ));
-
-
    return(
-      <div className="Mapdiv">
+      <div>
         <GoogleMapExample
-        loadingElement={
-           <div
-             style={{ height: `100%` }}
-           />
-         }
-         containerElement={
-           <div
-             style={{ height: `100vh` }}
-             role="application"
-             tabIndex="0"
-             aria-label="Map with locations of Christmas Markets"
-           />
-         }
-         mapElement={
-           <div
-            style={{ height: `100%` }}
-           />
-         }
-       />
-     </div>
+          containerElement={ <div style={{ height: `100vh`, width: '100vw' }} /> }
+          mapElement={ <div style={{ height: `100%` }} /> }
+        />
+      </div>
    );
    }
 };
