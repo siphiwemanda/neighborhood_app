@@ -66,3 +66,80 @@ const marker = new google.maps.Marker({
      );
      }
   };
+
+
+
+
+
+
+
+        <header className="App-header">
+          <Header/>
+          </header>
+
+          <div className="mainbody">
+            <div
+                  onDelparks ={this.removepark}
+                  parks={this.state.parks}/>
+            </div>
+          <div>
+                <p> "hello world"</p>
+          </div>*
+
+          </div>
+
+
+
+         <footer className ="App-footer">
+          </Footer>
+          </footer>
+          </div>
+
+
+
+
+
+
+          <myGooglemap
+          loadingElement={
+             <div style={{ height: `500px` }}/>
+           }
+           containerElement={
+             <div
+               style={{ height: `500px` }}
+               role="application"
+               tabIndex="0"
+               aria-label="Map with locations of Christmas Markets"
+             />
+           }
+           mapElement={
+             <div
+              style={{ height: `500px` }}
+             />
+           }
+         />
+       </div>
+     );
+     }
+  };
+
+  export default Map;
+
+
+
+
+
+
+
+
+
+
+
+
+
+  //  const pfeild ={{lat:53.4483, lng: -2.2245}};
+  //  var marker = new GoogleMap.Marker({
+  //    position: pfeild,
+  //    map: map,
+  //    title: 'First Marker!'
+  //  })
