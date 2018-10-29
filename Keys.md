@@ -29,117 +29,42 @@ const marker = new google.maps.Marker({
 
 
 
-  class Map extends Component {
-     render() {
-     const GoogleMapExample = withGoogleMap(props => (
-        <GoogleMap
-          defaultCenter = { { lat: 53.480759, lng: -2.242631 } }
-          defaultZoom = { 12 }
-        >
-        </GoogleMap>
-     ));
+  state={
+    parks: [
+    {
+      Parkname: "platt fields park",
+      organisation: "parkrun",
+      distance: "5km",
+      day: "Saturday",
+      time: "9AM",
+      picture: "https://images.pexels.com/photos/257360/pexels-photo-257360.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+
+    {
+      Parkname: "Birchfields Park",
+      organisation: "Great Local Run",
+      distance: "5km, 2km",
+      day: "Sunaday",
+      time: "11AM",
+      picture: "https://images.pexels.com/photos/257360/pexels-photo-257360.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    },
+
+    {
+      Parkname: "Varley Park",
+      organisation: "parkrun",
+      distance: "5km",
+      day: "Saturday",
+      time: "9AM",
+      picture: "https://images.pexels.com/photos/257360/pexels-photo-257360.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    },
+
+  ],
+
+ }
 
 
-     return(
-        <div className="Mapdiv">
-          <GoogleMapExample
-          loadingElement={
-             <div
-               style={{ height: `100%` }}
-             />
-           }
-           containerElement={
-             <div
-               style={{ height: `100vh` }}
-               role="application"
-               tabIndex="0"
-               aria-label="Map with locations of Christmas Markets"
-             />
-           }
-           mapElement={
-             <div
-              style={{ height: `100%` }}
-             />
-           }
-         />
-       </div>
-     );
-     }
-  };
+ removepark =(park)=>
+this.setState((state)=>({
+ parks: state.parks.filter((p)=> p.id !== park.id)
 
-
-
-
-
-
-
-        <header className="App-header">
-          <Header/>
-          </header>
-
-          <div className="mainbody">
-            <div
-                  onDelparks ={this.removepark}
-                  parks={this.state.parks}/>
-            </div>
-          <div>
-                <p> "hello world"</p>
-          </div>*
-
-          </div>
-
-
-
-         <footer className ="App-footer">
-          </Footer>
-          </footer>
-          </div>
-
-
-
-
-
-
-          <myGooglemap
-          loadingElement={
-             <div style={{ height: `500px` }}/>
-           }
-           containerElement={
-             <div
-               style={{ height: `500px` }}
-               role="application"
-               tabIndex="0"
-               aria-label="Map with locations of Christmas Markets"
-             />
-           }
-           mapElement={
-             <div
-              style={{ height: `500px` }}
-             />
-           }
-         />
-       </div>
-     );
-     }
-  };
-
-  export default Map;
-
-
-
-
-
-
-
-
-
-
-
-
-
-  //  const pfeild ={{lat:53.4483, lng: -2.2245}};
-  //  var marker = new GoogleMap.Marker({
-  //    position: pfeild,
-  //    map: map,
-  //    title: 'First Marker!'
-  //  })
+}))
