@@ -13,7 +13,7 @@ const parks: [
     distance: "5km",
     day: "Saturday",
     time: "9AM",
-    LatLng "53.447456, -2.224610"
+    location: {lat: 53.447456, lng: -2.224610}
   },
 
   {
@@ -23,7 +23,7 @@ const parks: [
     distance: "5km, 2km",
     day: "Sunaday",
     time: "11AM",
-    LatLng "53.451355, -2.212029"
+    location: {lat: 53.451355, lng: -2.212029}
 
   },
 
@@ -34,7 +34,7 @@ const parks: [
     distance: "5km",
     day: "Saturday",
     time: "9AM",
-    LatLng "53.428904, -2.190995"
+    location: {lat: 53.428904, lng: -2.190995}
 
   },
   {
