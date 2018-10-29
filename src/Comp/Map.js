@@ -3,43 +3,6 @@ import React, { Component } from 'react';
 
 class Map extends Component {
 
-  state = {
-     parks: [
-      {
-        Parkname: "platt fields park",
-        organisation: "parkrun",
-        distance: "5km",
-        day: "Saturday",
-        time: "9AM",
-        Lat: 53.447456,
-        lng: -2.224610,
-      },
-
-      {
-        Parkname: "Birchfields Park",
-        organisation: "Great Local Run",
-        distance: "5km, 2km",
-        day: "Sunaday",
-        time: "11AM",
-        Lat: 53.451355,
-        lng: -2.212029,
-
-      },
-
-      {
-        Parkname: "Varley Park",
-        organisation: "parkrun",
-        distance: "5km",
-        day: "Saturday",
-        time: "9AM",
-        Lat: 53.428904,
-        lng: -2.212029,
-
-      },
-
-    ]
-  }
-
   componentDidMount(){
       this.renderMap()
   }
@@ -48,30 +11,39 @@ class Map extends Component {
     window.initMap = this.initMap
   }
 
-  initMap = () => {
-        const Map = new window.google.maps.Map(document.getElementById('map'), {
-           center: {lat: 53.480759, lng: -2.242631},
-           zoom: 13
-         })
 
-         const marker = new window.google.maps.Marker({
-           position: {lat: 53.447456,lng: -2.224610},
-           map: Map,
-           title:"marker one"
-         })
-         const markertwo = new window.google.maps.Marker({
-           position: {lat: 53.451355,lng: -2.212029},
-           map: Map,
-           title:"marker two"
-         })
-         const markerthree = new window.google.maps.Marker({
-           position: {lat: 53.428904,lng: -2.190995},
-           map: Map,
-           title:"marker three"
-         })
+initMap = () => {
+    const markers = [];
 
-       }
-  render(){
+    const locations=[
+      {Runnames: "South Manchester parkrun", location: {lat: 53.447456, lng: -2.224610}},
+      {Runnames: "Birchfields Park",         location: {lat: 53.451355, lng: -2.212029}},
+      {Runnames: "Burnage parkrun",          location: {lat: 53.428904, lng: -2.190995}},
+
+    ];
+
+      const Map = new window.google.maps.Map(document.getElementById('map'), {
+      center: {lat: 53.480759, lng: -2.242631},
+      zoom: 13
+    });
+
+
+    for(let i=0;i<locations.length;i++){
+            const position = locations[i].location;
+            const runnames = locations[i].runnames;
+
+                   const marker = new window.google.maps.Marker({
+                     position: position,
+                     map: Map,
+                     title: runnames,
+                     animation: window.google.maps.Animation.DROP,
+                     id: i,
+                    })
+    markers.push(marker)
+        }
+};
+
+render(){
     return(
       <div id='map'></div>
     )
