@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
 import './index.css'
+import './header.css'
 /*import axios from 'axios'*/
 import Map from './Comp/Map'
+import Header from './Comp/header'
 
 
 class App extends Component {
@@ -11,7 +13,7 @@ class App extends Component {
       parks: [
       {
         Runnames: "South Manchester parkrun",
-        location: "platt fields park",
+        location: "platt fields park, Manchester",
         organisation: "parkrun",
         distance: "5km",
         day: "Saturday",
@@ -21,7 +23,7 @@ class App extends Component {
 
       {
         Runnames: "Birchfields Park",
-        Parkname: "Birchfields Park",
+        location: "Birchfields Park, Manchester",
         organisation: "Great Local Run",
         distance: "5km, 2km",
         day: "Sunaday",
@@ -32,7 +34,7 @@ class App extends Component {
 
       {
         Runnames: "Burnage parkrun",
-        location: "Varley Park",
+        location: "Varley Park, Manchester",
         organisation: "parkrun",
         distance: "5km",
         day: "Saturday",
@@ -68,6 +70,7 @@ class App extends Component {
     return (
       <div className="App">
       <main>
+     <Header parks={this.state.parks}></Header>
      <Map parks={this.state.parks}> </Map >
     </main>
       </div>

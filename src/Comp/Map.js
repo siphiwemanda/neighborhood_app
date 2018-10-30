@@ -26,7 +26,7 @@ initMap = () => {
           animation: window.google.maps.Animation.DROP,
           /*id: i,*/
         })
-       var largeInfowindow = new window.google.maps.InfoWindow();
+       const largeInfowindow = new window.google.maps.InfoWindow();
        marker.addListener('click', function() {
           populateInfoWindow(this, largeInfowindow);
         });
@@ -34,7 +34,7 @@ initMap = () => {
               // Check to make sure the infowindow is not already opened on this marker.
               if (infowindow.marker !== marker) {
                 infowindow.marker = marker;
-                infowindow.setContent('<div>' + marker.title + '</div>');
+                infowindow.setContent('<div>' + marker.Parkname + '</div>');
                 infowindow.open(Map, marker);
                 // Make sure the marker property is cleared if the infowindow is closed.
                 infowindow.addListener('closeclick',function(){
