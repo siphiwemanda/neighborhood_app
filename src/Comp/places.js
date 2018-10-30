@@ -55,7 +55,7 @@ const parks: [
     distance: "5km, 2km",
     day: "Sunday",
     time: "9AM",
-    LatLng ""
+    LatLng {lat: 53.428904, lng: -2.190995}
 
   },
 

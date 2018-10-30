@@ -70,3 +70,29 @@ this.setState((state)=>({
  parks: state.parks.filter((p)=> p.id !== park.id)
 
 }))
+
+
+const markers = [];
+
+const locations=[
+  {Runnames: "South Manchester parkrun", location: {lat: 53.447456, lng: -2.224610}},
+  {Runnames: "Birchfields Park",         location: {lat: 53.451355, lng: -2.212029}},
+  {Runnames: "Burnage parkrun",          location: {lat: 53.428904, lng: -2.190995}},
+
+];
+
+
+for(let i=0;i<locations.length;i++){
+        const position = locations[i].location;
+        const runnames = locations[i].runnames;
+
+                 const marker = new window.google.maps.Marker({
+                 position: position,
+                 map: Map,
+                 title: runnames,
+                 animation: window.google.maps.Animation.DROP,
+                 id: i,
+                })
+markers.push(marker)
+    }
+};

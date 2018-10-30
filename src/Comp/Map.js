@@ -13,37 +13,31 @@ class Map extends Component {
 
 
 initMap = () => {
-    const markers = [];
-
-    const locations=[
-      {Runnames: "South Manchester parkrun", location: {lat: 53.447456, lng: -2.224610}},
-      {Runnames: "Birchfields Park",         location: {lat: 53.451355, lng: -2.212029}},
-      {Runnames: "Burnage parkrun",          location: {lat: 53.428904, lng: -2.190995}},
-
-    ];
-
-      const Map = new window.google.maps.Map(document.getElementById('map'), {
-      center: {lat: 53.480759, lng: -2.242631},
-      zoom: 13
+    const Map = new window.google.maps.Map(document.getElementById('map'), {
+    center: {lat: 53.480759, lng: -2.242631},
+    zoom: 12
     });
 
+    this.props.parks.map((park) => {
+          const marker = new window.google.maps.Marker ({
+          position: park.LatLng,
+          map: Map,
+          title: park.Parkname,
+          animation: window.google.maps.Animation.DROP,
+          /*id: i,*/
+        })
 
-    for(let i=0;i<locations.length;i++){
-            const position = locations[i].location;
-            const runnames = locations[i].runnames;
+  
 
-                   const marker = new window.google.maps.Marker({
-                     position: position,
-                     map: Map,
-                     title: runnames,
-                     animation: window.google.maps.Animation.DROP,
-                     id: i,
-                    })
-    markers.push(marker)
-        }
-};
+      })
+console.log('beep')
+
+}
+
+
 
 render(){
+  console.log('props', this.props)
     return(
       <div id='map'></div>
     )
