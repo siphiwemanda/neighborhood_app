@@ -111,6 +111,10 @@ nav.menu > a {
 
 }
 
+.listofparks{
+	overflow-y: scroll;
+}
+
 .footer {
    position: fixed;
    left: 0;

@@ -44,12 +44,9 @@ class Header extends Component{
       />
       </div>
 
-    <ol>
+    <ol className='listofparks'>
        {showingParks.map((park)=>(
          <li key ={park.name} className = 'parkslist'>
-         <div className = 'parkpic' style ={{
-           backgroundImage: `url(${park.url})`
-         }}/>
          <div className= "parklistnames">
          <p>{park.name}</p>
          <p>{park.location.address}</p>
