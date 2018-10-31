@@ -5,6 +5,7 @@ import './header.css'
 /*import axios from 'axios'*/
 import Map from './Comp/Map'
 import Header from './Comp/header'
+import Footer from './Comp/footer'
 
 
 class App extends Component {
@@ -81,6 +82,7 @@ class App extends Component {
       <main>
      <Header parks={this.state.parks}></Header>
      <Map parks={this.state.parks}> </Map >
+     <Footer></Footer>
     </main>
       </div>
     );
