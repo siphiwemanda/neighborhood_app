@@ -1,15 +1,29 @@
 import React, { Component } from 'react';
+import escapeRegExp from 'escape-string-regexp'
+import sortBy from 'sort-by'
+
 
 class Header extends Component{
-  constructor(props){
-      super(props);
-   }
+  state ={
+      query:""
+  }
 
-   getInitialState(){
-  return {"showHideSidenav":"hidden"};
-}
+  updateQuery =(query)=>{
+    this.setState({query:query.trim()})
+  }
+
 
   render(){
+    let showingParks
+    if(this.state.query){
+      const match = new RegExp(escapeRegExp(this.state.query), 'i')
+      showingParks = this.props.parks.filter((park)=> match.test(park.location))
+
+    }else{
+      showingParks=this.props.parks
+    }
+
+    showingParks.sort(sortBy('location'))
     console.log('props', this.props)
     return (
       <div>
@@ -20,11 +34,21 @@ class Header extends Component{
     		</div>
     	</header>
       <nav className='menu_show'>
-      <ol>
-       {this.props.parks.map((park)=>(
+      <div className="searchfeild">
+      <input
+      className="searchparks"
+      type ="text"
+      placeholder="search runs"
+      value={this.state.query}
+      onChange={(event)=> this.updateQuery(event.target.value)}
+      />
+      </div>
+
+    <ol>
+       {showingParks.map((park)=>(
          <li key ={park.Runnames} className = 'parkslist'>
          <div className= "parklistnames">
-         {park.Runnames}
+         {park.Runnames},
          {park.location}
          </div>
          </li>

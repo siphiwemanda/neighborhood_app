@@ -77,3 +77,27 @@ nav.menu > a {
   text-overflow: ellipsis;
 
 }
+
+
+.searchfeild{
+  padding-top: 30px;
+  /*position: fixed;*/
+  /*width: 100%;*/
+  top:0;
+  border-bottom: 1px solid #d5d8df;
+  display: flex;
+
+}
+
+.searchparks{
+  width:100%;
+  padding: 20px 20px 20px 60px;
+  background-image: image();
+  background-repeat: no-repeat;
+  background-position: 20px center;
+  background-size: 1.2em;
+  font-size: 1.2em;
+  border: 0;
+  outline: none;
+
+}
