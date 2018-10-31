@@ -18,7 +18,9 @@ class App extends Component {
         distance: "5km",
         day: "Saturday",
         time: "9AM",
-        LatLng: {lat: 53.447456, lng: -2.224610}
+        LatLng: {lat: 53.447456, lng: -2.224610},
+        url: "https://images.pexels.com/photos/257360/pexels-photo-257360.jpeg?auto=compress&cs=tinysrgb&h=350",
+
       },
 
       {
@@ -28,7 +30,8 @@ class App extends Component {
         distance: "5km, 2km",
         day: "Sunaday",
         time: "11AM",
-        LatLng: {lat: 53.451355, lng: -2.212029}
+        LatLng: {lat: 53.451355, lng: -2.212029},
+        url: "https://images.pexels.com/photos/257360/pexels-photo-257360.jpeg?auto=compress&cs=tinysrgb&h=350",
 
       },
 
@@ -39,7 +42,9 @@ class App extends Component {
         distance: "5km",
         day: "Saturday",
         time: "9AM",
-        LatLng: {lat: 53.428904, lng: -2.190995}
+        LatLng: {lat: 53.428904, lng: -2.190995},
+        url: "https://images.pexels.com/photos/257360/pexels-photo-257360.jpeg?auto=compress&cs=tinysrgb&h=350",
+
 
       },
       {
@@ -49,7 +54,9 @@ class App extends Component {
         distance: "5km, 2km",
         day: "Wednessday",
         time: "6:45PM",
-        LatLng: {lat: 53.471892, lng: -2.299572}
+        LatLng: {lat: 53.471892, lng: -2.299572},
+        url: "https://images.pexels.com/photos/257360/pexels-photo-257360.jpeg?auto=compress&cs=tinysrgb&h=350",
+
 
       },
 
@@ -60,7 +67,9 @@ class App extends Component {
         distance: "5km, 2km",
         day: "Sunday",
         time: "9AM",
-        LatLng: {lat: 53.460548, lng: -2.154102}
+        LatLng: {lat: 53.460548, lng: -2.154102},
+        url: "https://images.pexels.com/photos/257360/pexels-photo-257360.jpeg?auto=compress&cs=tinysrgb&h=350",
+
 
       },
 
