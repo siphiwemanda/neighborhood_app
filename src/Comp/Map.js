@@ -15,7 +15,7 @@ class Map extends Component {
 initMap = () => {
     const Map = new window.google.maps.Map(document.getElementById('map'), {
     center: {lat: 53.480759, lng: -2.242631},
-    zoom: 8
+    zoom: 12
     });
 
     this.props.parks.map((park) => {
@@ -34,7 +34,7 @@ initMap = () => {
               // Check to make sure the infowindow is not already opened on this marker.
         if (infowindow.marker !== marker) {
                 infowindow.marker = marker;
-                infowindow.setContent('<div>' + park.location + '</div>');
+                infowindow.setContent('<div>' + park.location + park.Runnames +  '</div>');
                 infowindow.open(Map, marker);
                 // Make sure the marker property is cleared if the infowindow is closed.
                 infowindow.addListener('closeclick',function(){
