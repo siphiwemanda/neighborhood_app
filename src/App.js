@@ -13,9 +13,10 @@ class App extends Component {
 
   state ={
       parks: [
+
       {
         Runnames: "South Manchester parkrun",
-        location: "platt fields park, Manchester",
+        location: "Platt Fields Park, Manchester",
         organisation: "parkrun",
         distance: "5km",
         day: "Saturday",
@@ -26,7 +27,7 @@ class App extends Component {
       },
 
       {
-        Runnames: "Birchfields Park",
+        Runnames: "Birchfields Park GLR",
         location: "Birchfields Park, Manchester",
         organisation: "Great Local Run",
         distance: "5km, 2km",
@@ -50,7 +51,7 @@ class App extends Component {
 
       },
       {
-        Runnames: "Salford Quays",
+        Runnames: "Salford Quays GLR",
         location: "Salford Quays, Manchester",
         organisation: "Great Local Run",
         distance: "5km, 2km",
@@ -63,7 +64,7 @@ class App extends Component {
       },
 
       {
-        Runnames: "Debdale Park",
+        Runnames: "Debdale Park GLR",
         location: "Debdale Park, Manchester",
         organisation: "Great Local Run",
         distance: "5km, 2km",
@@ -78,35 +79,7 @@ class App extends Component {
     ]
   }
 
-  componentDidMount(){
-    this.getparkruns()
-  }
-
-  parkruns:[]
-
-    getparkruns =() =>{
-      const endPoint = "https://api.foursquare.com/v2/venues/search?"
-      const parameters = {
-        client_id: "3VL5IFAPPVNRM2GDM0DRZAK3FJOSRDT0PSUGSFYQPRGVNGKC",
-        client_secret: "JPWH0GDPUWAHMBUU3PQ4B1QWJN3OI2PMWLXJ2JDKI0PCUA1M",
-        query: "parkrun",
-        near: "Manchester, UK",
-        v:"20182510"
-
-      };
-      axios.get(endPoint + new URLSearchParams(parameters))
-      .then(response =>{
-        this.setState({
-          parkruns: response.data.response.venues
-        })
-
-        console.log(response)
-      })
-      .catch(error =>{
-        console.log("ERROR" + error)
-      })
-    };
-
+  
 
   render() {
     return (

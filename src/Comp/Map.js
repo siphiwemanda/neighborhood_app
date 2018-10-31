@@ -34,7 +34,7 @@ initMap = () => {
               // Check to make sure the infowindow is not already opened on this marker.
         if (infowindow.marker !== marker) {
                 infowindow.marker = marker;
-                infowindow.setContent('<div>' + park.location + park.Runnames +  '</div>');
+                infowindow.setContent('<div>' + '<p>'+park.location+'</p>' + '<p>'+park.Runnames+'</p>' +  '</div>');
                 infowindow.open(Map, marker);
                 // Make sure the marker property is cleared if the infowindow is closed.
                 infowindow.addListener('closeclick',function(){
@@ -45,7 +45,6 @@ initMap = () => {
 
 
       })
-console.log('beep')
 
 }
 
