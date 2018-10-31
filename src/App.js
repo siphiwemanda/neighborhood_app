@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import axios from 'axios'
+
 import './App.css';
 import './index.css'
 import './header.css'
@@ -6,6 +8,7 @@ import './header.css'
 import Map from './Comp/Map'
 import Header from './Comp/header'
 import Footer from './Comp/footer'
+import Foursquare from './Comp/foursquare'
 
 
 class App extends Component {
@@ -76,18 +79,24 @@ class App extends Component {
 
     ]
   }
+
+
+
+
   render() {
     return (
       <div className="App">
       <main>
      <Header parks={this.state.parks}></Header>
      <Map parks={this.state.parks}> </Map >
+     <Foursquare parks={this.state.parks}></Foursquare>
      <Footer></Footer>
     </main>
       </div>
     );
   }
 }
+
 
 
 
