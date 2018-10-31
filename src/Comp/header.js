@@ -17,7 +17,7 @@ class Header extends Component{
     let showingParks
     if(this.state.query){
       const match = new RegExp(escapeRegExp(this.state.query), 'i')
-      showingParks = this.props.parks.filter((park)=> match.test(park.location))
+      showingParks = this.props.parks.filter((park)=> match.test(park.name))
 
     }else{
       showingParks=this.props.parks
@@ -28,7 +28,7 @@ class Header extends Component{
     return (
       <div>
         <header>
-    		<h1>Free Runs in Manchester</h1>
+    		<h1>Free Runs Near Manchester</h1>
     		<div className="top">
     		<a href="#" className="menu_icon"><i className="material-icons">dehaze</i></a>
     		</div>
@@ -46,14 +46,13 @@ class Header extends Component{
 
     <ol>
        {showingParks.map((park)=>(
-         <li key ={park.Runnames} className = 'parkslist'>
+         <li key ={park.name} className = 'parkslist'>
          <div className = 'parkpic' style ={{
            backgroundImage: `url(${park.url})`
          }}/>
          <div className= "parklistnames">
-         <p>{park.Runnames}</p>
-         <p>{park.location}</p>
-         <p>{park.distance}</p>
+         <p>{park.name}</p>
+         <p>{park.location.address}</p>
          </div>
          </li>
        ))}
