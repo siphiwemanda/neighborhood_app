@@ -22,7 +22,7 @@ initMap = () => {
           const marker = new window.google.maps.Marker ({
           position: park.LatLng,
           map: Map,
-          title: park.Parkname,
+          title: park.location,
           animation: window.google.maps.Animation.DROP,
           /*id: i,*/
         })
@@ -32,9 +32,9 @@ initMap = () => {
         });
         function populateInfoWindow(marker, infowindow) {
               // Check to make sure the infowindow is not already opened on this marker.
-              if (infowindow.marker !== marker) {
+        if (infowindow.marker !== marker) {
                 infowindow.marker = marker;
-                infowindow.setContent('<div>' + marker.Parkname + '</div>');
+                infowindow.setContent('<div>' + park.location + '</div>');
                 infowindow.open(Map, marker);
                 // Make sure the marker property is cleared if the infowindow is closed.
                 infowindow.addListener('closeclick',function(){
