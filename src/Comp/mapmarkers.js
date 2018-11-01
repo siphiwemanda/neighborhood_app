@@ -16,7 +16,7 @@ state={}
       let showingMarkers
       if(this.props.query){
         const match = new RegExp(escapeRegExp(this.props.query), 'i')
-        showingMarkers = this.props.parks.filter((park)=> match.test(park.name))
+        showingMarkers = this.parks.filter((park)=> match.test(park.name))
 
       }else{
         showingMarkers=this.props.parks

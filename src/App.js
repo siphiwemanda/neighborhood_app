@@ -76,6 +76,8 @@ navBarbtn() {
      <Map
             parks={this.state.parkruns}
             query ={this.state.query}
+            whenUpdateQuery={this.updateQuery.bind(this)}
+
             googleMapURL='https://maps.googleapis.com/maps/api/js?key=AIzaSyBndej0CC1LX31Kl_eo1JgkVz-BpWjVADo'
 
             loadingElement={<div  style={{ height: `100%` }}/>}

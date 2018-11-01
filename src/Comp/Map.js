@@ -12,7 +12,7 @@ const Map = withScriptjs(withGoogleMap((props)=>{
       <MapMarkers
       key={park.name}
       query ={props.query}
-      parks={props.name}
+      parks={props.parks}
       position= {{lat: park.location.lat , lng: park.location.lng}}
       />
  )
