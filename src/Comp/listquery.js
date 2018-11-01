@@ -7,8 +7,8 @@ class Listquery extends Component{
 
 render(){
   let showingParks
-  if(this.state.query){
-    const match = new RegExp(escapeRegExp(this.state.query), 'i')
+  if(this.props.query){
+    const match = new RegExp(escapeRegExp(this.props.query), 'i')
     showingParks = this.props.parks.filter((park)=> match.test(park.name))
 
   }else{
@@ -18,6 +18,7 @@ render(){
 
   showingParks.sort(sortBy('location'))
   console.log('props', this.props)
+  console.log(showingParks)
 
   if(!this.props.shownav){
     return null
@@ -37,7 +38,7 @@ render(){
     </div>
 
     <ol className='listofparks'>
-    {this.props.parks.map((park)=>(
+      {showingParks.map((park)=>(
       <li key ={park.name} className = 'parkslist'>
       <div className= "parklistnames">
       <p>{park.name} </p>

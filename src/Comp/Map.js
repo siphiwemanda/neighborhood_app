@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-
+import escapeRegExp from 'escape-string-regexp'
+import sortBy from 'sort-by'
 
 class Map extends Component {
 
@@ -17,41 +18,13 @@ initMap = () => {
     center: {lat: 53.480759, lng: -2.242631},
     zoom: 8
     });
-
-    this.props.parks.map((park) => {
-          const marker = new window.google.maps.Marker ({
-          position: {lat: park.location.lat , lng: park.location.lng},
-          map: Map,
-          title: park.name,
-          animation: window.google.maps.Animation.DROP,
-          /*id: i,*/
-        })
-       const largeInfowindow = new window.google.maps.InfoWindow();
-       marker.addListener('click', function() {
-          populateInfoWindow(this, largeInfowindow);
-        });
-        function populateInfoWindow(marker, infowindow) {
-              // Check to make sure the infowindow is not already opened on this marker.
-        if (infowindow.marker !== marker) {
-                infowindow.marker = marker;
-                infowindow.setContent('<div>' + '<p>'+park.name+'</p>' + '<p>'+park.location.address+'</p>' +  '</div>');
-                infowindow.open(Map, marker);
-                // Make sure the marker property is cleared if the infowindow is closed.
-                infowindow.addListener('closeclick',function(){
-                  infowindow.setMarker = null;
-                });
-              }
-            }
-
-
-      })
-
 }
 
 
 
 render(){
   console.log('props', this.props)
+
     return(
       <div id='map'></div>
     )

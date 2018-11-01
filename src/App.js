@@ -33,6 +33,7 @@ navBarbtn() {
   }))
 }
 
+
  getParks=() =>{
    const endPoint = "https://api.foursquare.com/v2/venues/search?"
    const parameters = {
@@ -74,6 +75,8 @@ navBarbtn() {
             />
      <Map
             parks={this.state.parkruns}
+            query ={this.state.query}
+
             />
      <Footer></Footer>
     </main>
