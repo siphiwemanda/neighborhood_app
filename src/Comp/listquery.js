@@ -32,7 +32,7 @@ render(){
     type ="text"
     placeholder="search runs"
     value={this.state.query}
-    onChange={(event)=> this.whenUpdateQuery(event.target.value)}
+    onChange={(event)=> this.props.whenUpdateQuery(event.target.value)}
     />
     </div>
 
@@ -41,7 +41,7 @@ render(){
       <li key ={park.name} className = 'parkslist'>
       <div className= "parklistnames">
       <p>{park.name} </p>
-      <p>{park.location.address}</p>
+
       </div>
       </li>
     ))}

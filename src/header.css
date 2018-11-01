@@ -2,8 +2,8 @@ body { margin: 0 auto; }
 
 header {
 	height: 70px;
-	background-color: #3e739d;
-	border-bottom: 1px solid #494949;
+	background-color: #6f9ceb;
+	border-bottom: 1px solid #c6d8f7;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -19,13 +19,13 @@ header > .top {
 	left: 20px;
 }
 header > .top a.menu_icon i {
-	color: #000;
+	color: #cdcbfa;
 	font-size: 40px;
 	padding-top: 5px;
 	transition: .2s ease;
 }
 header > .top a.menu_icon:hover i {
-	color: #fff;
+	color: #141b41;
 }
 nav.menu {
 	width: 300px;
@@ -120,7 +120,7 @@ nav.menu > a {
    left: 0;
    bottom: 0;
    width: 100%;
-   background-color: #3e739d;
+   background-color: #6f9ceb;
    color: white;
    text-align: center;
 	 height: 35px;

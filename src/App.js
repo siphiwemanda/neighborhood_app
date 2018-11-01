@@ -15,7 +15,8 @@ class App extends Component {
   state ={
     parkruns:[],
     query:'',
-    shownav: false
+    shownav: false,
+    pickedlocation: null
 
   }
   componentDidMount(){
