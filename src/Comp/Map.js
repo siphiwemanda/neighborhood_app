@@ -4,10 +4,15 @@ import MapMarkers from './mapmarkers'
 
 
 const Map = withScriptjs(withGoogleMap((props)=>{
+
+
+
   const markers = props.parks.map((park)=>{
     return (
       <MapMarkers
       key={park.name}
+      query ={props.query}
+      parks={props.name}
       position= {{lat: park.location.lat , lng: park.location.lng}}
       />
  )
