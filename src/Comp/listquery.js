@@ -31,13 +31,16 @@ render(){
     <input
     className="searchparks"
     type ="text"
-    placeholder="search runs"
+    placeholder ="search runs"
+    aria-label ='search for locations by name'
+    tabIndex ='0'
     value={this.state.query}
     onChange={(event)=> this.props.whenUpdateQuery(event.target.value)}
     />
     </div>
 
-    <ol className='listofparks'>
+    <ol className='listofparks' aria-hidden="true"
+      aria-label='A list of locations'>
       {showingParks.map((park)=>(
       <li key ={park.name} className = 'parkslist'>
       <div className= "parklistnames">

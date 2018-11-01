@@ -81,7 +81,11 @@ navBarbtn() {
             googleMapURL='https://maps.googleapis.com/maps/api/js?key=AIzaSyBndej0CC1LX31Kl_eo1JgkVz-BpWjVADo'
 
             loadingElement={<div  style={{ height: `100%` }}/>}
-            containerElement={ <div style={{ height: `100vh`, width: '100vw' }} /> }
+            containerElement={ <div style={{ height: `100vh`, width: '100vw' }}
+              role="application"
+              tabIndex="0"
+              aria-label="Map showing the free runs in and around manchester"
+            /> }
             mapElement={ <div style={{ height: `100%` }} /> }
 
 
