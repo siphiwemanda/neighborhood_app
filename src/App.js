@@ -8,6 +8,7 @@ import Header from './Comp/header'
 import Footer from './Comp/footer'
 import axios from 'axios'
 import Listquery from './Comp/listquery'
+import showingParks from './Comp/listquery'
 
 
 class App extends Component {
@@ -16,11 +17,13 @@ class App extends Component {
     parkruns:[],
     query:'',
     shownav: false,
-    pickedlocation: null
+    pickedlocation: null,
+    click: false,
+    showingParks: showingParks
 
 
   }
-  componentDidMount(){
+componentDidMount(){
  this.getParks()
 }
 
@@ -34,12 +37,16 @@ navBarbtn() {
   }))
 }
 
-pickedlocation(park){
+pickedlocation(showingParks){
   this.setState({
-    
+    click: showingParks
   })
-
 }
+
+
+
+
+
 
 
 
@@ -81,6 +88,8 @@ pickedlocation(park){
             whenUpdateQuery={this.updateQuery.bind(this)}
             parks={this.state.parkruns}
             shownav={this.state.shownav}
+            clickedwhenclick={this.pickedlocation.bind(this)}
+
 
 
             />

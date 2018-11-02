@@ -6,7 +6,26 @@ import escapeRegExp from 'escape-string-regexp'
 
 class MapMarkers extends Component{
 
-    state={}
+    state={
+      showinfowindow: false
+    }
+
+    infowindowclosed=()=>{
+      this.setState(prevState =>({
+        showinfowindow: !prevState.showinfowindow
+      }))
+    }
+
+
+
+
+    handleMarkerOnClick = () => {
+  this.props.whenMarkerIsClicked(this.props.location)
+}
+
+handleInfoWindowOnClose = () => {
+  this.props.whenMarkerIsClicked(null)
+}
 
 render(){
   let showingMarkers
@@ -21,8 +40,11 @@ render(){
     let animation = null
     let infoWindow = null
 
+    if(showingMarkers.isSelected === true){
+    animation = 1}
+
     infoWindow =(
-        <InfoWindow>
+        <InfoWindow onClick={() => this.handleInfoWindowOnClose()}>
             <div className='info'>
             <h2>hello</h2>
               </div>
@@ -30,7 +52,6 @@ render(){
     )
 
   console.log('props', this.props)
-  console.log(showingMarkers)
 
 return(
   showingMarkers.map((park =>(
@@ -38,6 +59,7 @@ return(
           key={park.id}
           position ={{lat: park.location.lat , lng: park.location.lng}}
           animation={animation}
+          onClick={()=> this.handleMarkerOnClick()}
       >
           {infoWindow}
     </Marker>

@@ -3,7 +3,7 @@ import escapeRegExp from 'escape-string-regexp'
 import sortBy from 'sort-by'
 
 class Listquery extends Component{
-  state={}
+
 
 render(){
   let showingParks
@@ -34,7 +34,7 @@ render(){
     placeholder ="search runs"
     aria-label ='search for locations by name'
     tabIndex ='0'
-    value={this.state.query}
+    value={this.props.query}
     onChange={(event)=> this.props.whenUpdateQuery(event.target.value)}
     />
     </div>
@@ -42,8 +42,8 @@ render(){
     <ol className='listofparks' aria-hidden="true"
       aria-label='A list of locations'>
       {showingParks.map((park)=>(
-      <li key ={park.name} className = 'parkslist'>
-      <div className= "parklistnames">
+      <li  onClick={this.props.clickedwhenclick} key ={park.name} className = 'parkslist'>
+      <div className= "parklistnames" >
       <p>{park.name} </p>
 
       </div>
