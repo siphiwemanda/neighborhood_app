@@ -9,14 +9,13 @@ class Header extends Component{
           tabIndex='0'>
 
     		<h1>Free Runs Near Manchester</h1>
-    		<div className="top" tabIndex='0'
-        aria-label='Header'>
+    		<div className="top">
 
     		<button  aria-label= 'open list' tabIndex='0' onClick={(e) => this.props.navbtn(e)} >
-        <div class="container" onclick="myFunction(this)">
-       <div class="bar1"></div>
-       <div class="bar2"></div>
-       <div class="bar3"></div>
+        <div className="container">
+       <div className="bar1"></div>
+       <div className="bar2"></div>
+       <div className="bar3"></div>
         </div>
 
         </button>

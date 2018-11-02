@@ -11,12 +11,13 @@ state={}
 
 
     render(){
-      console.log('props', this.props)
+
+
 
       let showingMarkers
       if(this.props.query){
         const match = new RegExp(escapeRegExp(this.props.query), 'i')
-        showingMarkers = this.parks.filter((park)=> match.test(park.name))
+        showingMarkers = this.props.parks.filter((park)=> match.test(park.name))
 
       }else{
         showingMarkers=this.props.parks
@@ -27,18 +28,25 @@ state={}
       infoWindow =(
     <InfoWindow>
     <div className='info'>
-    <h2>hey!</h2>
+    <h2>{this.name}</h2>
     </div>
     </InfoWindow>
   )
 
+  console.log('props', this.props)
+  console.log(showingMarkers)
+
 return(
-  <Marker
-     position ={this.props.position}
-     animation={animation}
->
-{infoWindow}
-</Marker>
+  showingMarkers.map((park =>(
+    <Marker
+       position ={this.props.position}
+       animation={animation}
+  >
+  {infoWindow}
+  </Marker>
+
+)))
+
 )
 }
 }
