@@ -28,7 +28,7 @@ state={}
       infoWindow =(
     <InfoWindow>
     <div className='info'>
-    <h2>{this.name}</h2>
+    <h2>hello</h2>
     </div>
     </InfoWindow>
   )
@@ -39,7 +39,8 @@ state={}
 return(
   showingMarkers.map((park =>(
     <Marker
-       position ={this.props.position}
+      key={park.id}
+       position ={{lat: park.location.lat , lng: park.location.lng}}
        animation={animation}
   >
   {infoWindow}
