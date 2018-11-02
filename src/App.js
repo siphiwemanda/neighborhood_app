@@ -18,6 +18,7 @@ class App extends Component {
     shownav: false,
     pickedlocation: null
 
+
   }
   componentDidMount(){
  this.getParks()
@@ -32,6 +33,15 @@ navBarbtn() {
     shownav: !prevState.shownav
   }))
 }
+
+pickedlocation(park){
+  this.setState({
+    
+  })
+
+}
+
+
 
 
  getParks=() =>{
@@ -51,6 +61,7 @@ navBarbtn() {
       console.log(response)
    })
    .catch(error =>{
+     alert(`Sorry, can't get information from Foursquare due to error ${error}`)
      console.log("ERROR" + error)
    })
  };
