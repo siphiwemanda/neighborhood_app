@@ -2,8 +2,8 @@ body { margin: 0 auto; }
 
 header {
 	height: 70px;
-	background-color: #3e739d;
-	border-bottom: 1px solid #494949;
+	background-color: #6f9ceb;
+	border-bottom: 1px solid #c6d8f7;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -19,45 +19,32 @@ header > .top {
 	left: 20px;
 }
 header > .top a.menu_icon i {
-	color: #000;
+	color: #cdcbfa;
 	font-size: 40px;
 	padding-top: 5px;
 	transition: .2s ease;
 }
 header > .top a.menu_icon:hover i {
-	color: #fff;
+	color: #141b41;
 }
-nav.menu {
-	width: 300px;
-	min-height: calc(100vh - 121px);
-	background-color: #03a9f4;
-	position: absolute;
-	left: -300px;
-	transition: .3s all;
-}
-nav.menu > a {
-    display: block;
-    padding: 5px;
-    margin: 15px 0 0px 20px;
-    color: #494949;
-    text-transform: uppercase;
-}
+
 
 
 .menu_show {
 	left: 0!important;
   float: left;
-	 overflow-y: scroll;
+	 overflow-y: auto;
+	 height: 110vh;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 470px) {
 	header h1 {
 		font-size: 16px;
 	}
 }
-@media screen and (max-width: 360px) {
-	nav.menu {
-		width: 100%;
+@media screen and (max-width: 470px) {
+	.menu_show {
+		width: 100vw;
 		left: -100%;
 	}
 }
@@ -120,12 +107,12 @@ nav.menu > a {
    left: 0;
    bottom: 0;
    width: 100%;
-   background-color: #3e739d;
+   background-color: #6f9ceb;
    color: white;
    text-align: center;
-	 height: 35px;
+	 height: 40px;
 }
 
 .footertext{
-	/*padding: 10px 10px 10px 10px;*/
+	font-size: 0.1em;
 }

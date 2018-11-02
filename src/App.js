@@ -7,16 +7,33 @@ import Map from './Comp/Map'
 import Header from './Comp/header'
 import Footer from './Comp/footer'
 import axios from 'axios'
+import Listquery from './Comp/listquery'
 
 
 class App extends Component {
 
   state ={
-    parkruns:[]
+    parkruns:[],
+    query:'',
+    shownav: false,
+    pickedlocation: null
+
   }
   componentDidMount(){
  this.getParks()
 }
+
+updateQuery =(query)=>{
+  this.setState({query:query.trim()})
+}
+
+navBarbtn() {
+  this.setState(prevState => ({
+    shownav: !prevState.shownav
+  }))
+}
+
+
  getParks=() =>{
    const endPoint = "https://api.foursquare.com/v2/venues/search?"
    const parameters = {
@@ -44,8 +61,35 @@ class App extends Component {
     return (
       <div className="App">
       <main>
-   <Header parks={this.state.parkruns}></Header>
-     <Map parks={this.state.parkruns}> </Map >
+     <Header
+            parks={this.state.parkruns}
+            navbtn ={this.navBarbtn.bind(this)}
+            />
+     <Listquery
+            query ={this.state.query}
+            whenUpdateQuery={this.updateQuery.bind(this)}
+            parks={this.state.parkruns}
+            shownav={this.state.shownav}
+
+
+            />
+     <Map
+            parks={this.state.parkruns}
+            query ={this.state.query}
+            whenUpdateQuery={this.updateQuery.bind(this)}
+
+            googleMapURL='https://maps.googleapis.com/maps/api/js?key=AIzaSyBndej0CC1LX31Kl_eo1JgkVz-BpWjVADo'
+
+            loadingElement={<div  style={{ height: `100%` }}tabIndex="-1"/>}
+            containerElement={ <div style={{ height: `100vh`, width: '100vw' }}
+              role="application"
+              tabIndex="-1"
+              aria-label="Map showing the free runs in and around manchester"
+            /> }
+            mapElement={ <div style={{ height: `100%` }} tabIndex="-1"/> }
+
+
+            />
      <Footer></Footer>
     </main>
       </div>
