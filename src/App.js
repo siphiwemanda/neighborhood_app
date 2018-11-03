@@ -42,6 +42,10 @@ navBarbtn() {
   }))
 }
 
+clearPark =() =>{
+  this.setState({ClickedID: null})
+}
+
 pickedlocation(showingParks){
   this.setState({
     click: showingParks
@@ -102,6 +106,7 @@ pickedlocation(showingParks){
             parks={this.state.parkruns}
             query ={this.state.query}
             selectedpark={this.state.ClickedID}
+            resetpark ={this.clearPark.bind(this)}
             /*whenUpdateQuery={this.updateQuery.bind(this)}*/
 
             googleMapURL='https://maps.googleapis.com/maps/api/js?key=AIzaSyBndej0CC1LX31Kl_eo1JgkVz-BpWjVADo'
