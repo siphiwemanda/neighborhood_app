@@ -13,6 +13,9 @@ const Map = withScriptjs(withGoogleMap((props)=>{
        key={park.id}
        query ={props.query}
        parks={props.parks}
+       selectedpark={props.selectedpark}
+
+
       />
  )
 }

@@ -19,7 +19,8 @@ class App extends Component {
     shownav: false,
     pickedlocation: null,
     click: false,
-    showingParks: showingParks
+    showingParks: showingParks,
+    ClickedID: null,
 
 
   }
@@ -29,6 +30,10 @@ componentDidMount(){
 
 updateQuery =(query)=>{
   this.setState({query:query.trim()})
+}
+
+Updatepark = (park)=>{
+  this.setState({ClickedID:park})
 }
 
 navBarbtn() {
@@ -80,7 +85,7 @@ pickedlocation(showingParks){
       <div className="App">
       <main>
      <Header
-            parks={this.state.parkruns}
+
             navbtn ={this.navBarbtn.bind(this)}
             />
      <Listquery
@@ -89,14 +94,15 @@ pickedlocation(showingParks){
             parks={this.state.parkruns}
             shownav={this.state.shownav}
             clickedwhenclick={this.pickedlocation.bind(this)}
-
+            clickedpark={this.Updatepark.bind(this)}
 
 
             />
      <Map
             parks={this.state.parkruns}
             query ={this.state.query}
-            whenUpdateQuery={this.updateQuery.bind(this)}
+            selectedpark={this.state.ClickedID}
+            /*whenUpdateQuery={this.updateQuery.bind(this)}*/
 
             googleMapURL='https://maps.googleapis.com/maps/api/js?key=AIzaSyBndej0CC1LX31Kl_eo1JgkVz-BpWjVADo'
 

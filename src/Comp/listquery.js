@@ -42,7 +42,9 @@ render(){
     <ol className='listofparks' aria-hidden="true"
       aria-label='A list of locations'>
       {showingParks.map((park)=>(
-      <li  onClick={this.props.clickedwhenclick} key ={park.name} className = 'parkslist'>
+      <li        onClick={() => this.props.clickedpark(park)}
+
+            key ={park.name} className = 'parkslist'>
       <div className= "parklistnames" >
       <p>{park.name} </p>
 
