@@ -14,6 +14,8 @@ const Map = withScriptjs(withGoogleMap((props)=>{
        query ={props.query}
        parks={props.parks}
        selectedpark={props.selectedpark}
+       /*resetpark ={props.clearPark.bind(park)}*/
+
 
 
       />

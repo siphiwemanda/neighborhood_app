@@ -8,6 +8,7 @@ class MapMarkers extends Component{
 
     state={
       open: null,
+      dummy: false
     }
 
 openedmarker = (park)=>{
@@ -29,46 +30,55 @@ render(){
     let infoWindow = null
 
 
-    const parkinfo =(park) =>{
-      infoWindow = null
-      if(this.props.selectedpark != null){
-      if(park.id === this.props.selectedpark.id){
-      infoWindow =(
-        <InfoWindow >
-        <div className='info'>
-        <h2>{park.name}</h2>
-        </div>
-        </InfoWindow>
-   )
-   }}
 
- }
-
-
-
-
-const windowmod = (park) =>{
-  if (this.state.open != null){
-    infoWindow = null
-    console.log('yass')
-      if (park.id === this.state.open.id){
-        console.log('hit me baby one more time')
+      const parkinfo =(park) =>{
+        infoWindow = null
+        if(this.props.selectedpark != null){
+        if(park.id === this.props.selectedpark.id){
         infoWindow =(
-          <InfoWindow >
+          <InfoWindow onCloseClick ={()=> {
+            /*this.props.resetpark(park)*/
+            this.setState(prevState=>({
+              dummy: !prevState.dummy
+            }))
+
+            console.log('yep')}}>
           <div className='info'>
           <h2>{park.name}</h2>
           </div>
           </InfoWindow>
+     )
+     }}
+
+   }
 
 
-      )}else{
-        /*infoWindow = null*/
-        console.log('not today satan')
-      }
 
-      }
 
-}
+   const windowmod = (park) =>{
+     if (this.state.open != null){
+       infoWindow = null
+       console.log('yass')
+         if (park.id === this.state.open.id){
+           console.log('hit me baby one more time')
+           infoWindow =(
+             <InfoWindow onCloseClick ={(open)=> {
+               this.setState({open: null})
+               console.log('i closed')}} >
+             <div className='info'>
+             <h2>{park.name}</h2>
+             </div>
+             </InfoWindow>
+
+
+         )}else{
+           /*infoWindow = null*/
+           console.log('not today satan')
+         }
+
+         }
+
+   }
 
 
 
@@ -90,8 +100,11 @@ return(
           position ={{lat: park.location.lat , lng: park.location.lng}}
           animation={animation}
           showinfo={parkinfo(park)}
-          onClick={() => this.openedmarker(park)}
-          passing={windowmod(park)}
+
+
+
+       onClick={() => this.openedmarker(park)}
+       passing={windowmod(park)}
 
 
       >
