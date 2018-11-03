@@ -10,9 +10,9 @@ class MapMarkers extends Component{
       open: null,
     }
 
-    openinfo=(park)=>{
-      this.setState({open:park})
-    }
+openedmarker = (park)=>{
+  this.setState({open: park})
+}
 
 
 render(){
@@ -32,35 +32,54 @@ render(){
     const parkinfo =(park) =>{
       infoWindow = null
       if(this.props.selectedpark != null){
-      /*return inforwindow when park id matches show id else null*/
       if(park.id === this.props.selectedpark.id){
       infoWindow =(
-        <InfoWindow onClick={() => this.openinfo(park)}>
+        <InfoWindow >
         <div className='info'>
         <h2>{park.name}</h2>
         </div>
         </InfoWindow>
    )
    }}
-    if(this.state.open != null){
-      if(park.id === this.state.open.id){
-      infoWindow =(
-        <InfoWindow onClick={() => this.openinfo(park)}>
-        <div className='info'>
-        <h2>{park.name}</h2>
-        </div>
-        </InfoWindow>
-   )
-   }
-    }
-   }
+
+ }
 
 
-    if(showingMarkers.isSelected === true){
-    animation = 1}
+
+
+const windowmod = (park) =>{
+  if (this.state.open != null){
+    infoWindow = null
+    console.log('yass')
+      if (park.id === this.state.open.id){
+        console.log('hit me baby one more time')
+        infoWindow =(
+          <InfoWindow >
+          <div className='info'>
+          <h2>{park.name}</h2>
+          </div>
+          </InfoWindow>
+
+
+      )}else{
+        /*infoWindow = null*/
+        console.log('not today satan')
+      }
+
+      }
+
+}
+
+
+
+
+
+
+
 
 
   console.log('props', this.props)
+  console.log(this.state)
 
 
 
@@ -71,6 +90,9 @@ return(
           position ={{lat: park.location.lat , lng: park.location.lng}}
           animation={animation}
           showinfo={parkinfo(park)}
+          onClick={() => this.openedmarker(park)}
+          passing={windowmod(park)}
+
 
       >
           {infoWindow}
