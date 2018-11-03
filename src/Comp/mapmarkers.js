@@ -26,29 +26,36 @@ render(){
         showingMarkers=this.props.parks
       }
 
-    let animation = null
+    let animation = 0
     let infoWindow = null
 
 
 
       const parkinfo =(park) =>{
         infoWindow = null
+      //  animation = 0
         if(this.props.selectedpark != null){
         if(park.id === this.props.selectedpark.id){
+          animation=1
         infoWindow =(
           <InfoWindow onCloseClick ={()=> {
             this.props.resetpark(park)
-            this.setState(prevState=>({
-              dummy: !prevState.dummy
-            }))
+
 
           }}>
           <div className='info'>
           <h2>{park.name}</h2>
+           <p>{park.location.formattedAddress[0] }</p>
+           <p>{park.location.formattedAddress[1] }</p>
+           <p>{park.location.formattedAddress[2] }</p>
+
+
           </div>
           </InfoWindow>
      )
-     }}
+   }else{
+     animation=0
+   }}
 
    }
 
@@ -65,6 +72,9 @@ render(){
                >
              <div className='info'>
              <h2>{park.name}</h2>
+             <p>{park.location.formattedAddress[0] }</p>
+             <p>{park.location.formattedAddress[1] }</p>
+             <p>{park.location.formattedAddress[2] }</p>
              </div>
              </InfoWindow>
 
@@ -95,10 +105,11 @@ return(
     <Marker
           key={park.id}
           position ={{lat: park.location.lat , lng: park.location.lng}}
-          animation={animation}
           showinfo={parkinfo(park)}
           onClick={() => this.openedmarker(park)}
           passing={windowmod(park)}
+          animation={animation}
+
 
 
 
