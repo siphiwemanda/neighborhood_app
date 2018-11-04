@@ -8,7 +8,6 @@ class MapMarkers extends Component{
 
     state={
       open: null,
-      dummy: false
     }
 
 openedmarker = (park)=>{
@@ -33,7 +32,6 @@ render(){
 
       const parkinfo =(park) =>{
         infoWindow = null
-      //  animation = 0
         if(this.props.selectedpark != null){
         if(park.id === this.props.selectedpark.id){
           animation=1
@@ -79,9 +77,7 @@ render(){
              </InfoWindow>
 
 
-         )}else{
-           /*infoWindow = null*/
-         }
+         )}
 
          }
 

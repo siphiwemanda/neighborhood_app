@@ -7,12 +7,7 @@ const Map = withScriptjs(withGoogleMap((props)=>{
 
 
 
-  // const markers = props.parks.map((park)=>{
-    //return (
-      //<MapMarkers
 
-//}
-//)
 
 return(
       <GoogleMap
@@ -20,8 +15,7 @@ return(
         defaultZoom = { 9 }
       >
         <MapMarkers
-      /*key={park.id}*/
-      query ={props.query}
+        query ={props.query}
       parks={props.parks}
       selectedpark={props.selectedpark}
       resetpark ={props.resetpark.bind(this)}
@@ -29,7 +23,6 @@ return(
 
 
      />
-//)
       </GoogleMap>
 
    )

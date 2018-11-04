@@ -8,7 +8,6 @@ import Header from './Comp/header'
 import Footer from './Comp/footer'
 import axios from 'axios'
 import Listquery from './Comp/listquery'
-import showingParks from './Comp/listquery'
 
 
 class App extends Component {
@@ -17,9 +16,7 @@ class App extends Component {
     parkruns:[],
     query:'',
     shownav: false,
-    pickedlocation: null,
     click: false,
-    showingParks: showingParks,
     ClickedID: null,
 
 
@@ -46,11 +43,7 @@ clearPark =() =>{
   this.setState({ClickedID: null})
 }
 
-pickedlocation(showingParks){
-  this.setState({
-    click: showingParks
-  })
-}
+
 
 
 
@@ -97,7 +90,6 @@ pickedlocation(showingParks){
             whenUpdateQuery={this.updateQuery.bind(this)}
             parks={this.state.parkruns}
             shownav={this.state.shownav}
-            clickedwhenclick={this.pickedlocation.bind(this)}
             clickedpark={this.Updatepark.bind(this)}
 
 
@@ -107,7 +99,6 @@ pickedlocation(showingParks){
             query ={this.state.query}
             selectedpark={this.state.ClickedID}
             resetpark ={this.clearPark.bind(this)}
-            /*whenUpdateQuery={this.updateQuery.bind(this)}*/
 
             googleMapURL='https://maps.googleapis.com/maps/api/js?key=AIzaSyBndej0CC1LX31Kl_eo1JgkVz-BpWjVADo'
 
