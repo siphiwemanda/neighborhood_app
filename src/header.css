@@ -96,3 +96,8 @@ header > .top a.menu_icon:hover i {
 .footertext{
 	font-size: 0.1em;
 }
+
+.fourimg{
+	height: 50%;
+	 width: 50%;
+}

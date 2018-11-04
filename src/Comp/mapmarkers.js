@@ -29,6 +29,7 @@ class MapMarkers extends Component{
         const parkinfo =(park) =>{
         infoWindow = null //when a park is clicked in the list bouces the marker and info window pops up
         if(this.props.selectedpark != null){
+
         if(park.id === this.props.selectedpark.id){
         animation=1
         infoWindow =(
@@ -40,18 +41,18 @@ class MapMarkers extends Component{
            <p>{park.location.formattedAddress[0] }</p>
            <p>{park.location.formattedAddress[1] }</p>
            <p>{park.location.formattedAddress[2] }</p>
-           <img src={foursquare} alt="powered by Foursquare" />
+           <img src={foursquare} alt="powered by Foursquare" className= "fourimg" />
            </div>
           </InfoWindow>
       )}
         else{
-     animation=0
+       animation=0
       }}
     }
         //when a mark is clicked in the map page info window pops up
         const windowmod = (park) =>{
           if (this.state.open != null){
-            infoWindow = null
+            //infoWindow = null
           if (park.id === this.state.open.id){
               infoWindow =(
              <InfoWindow onCloseClick ={(open)=> {
@@ -62,16 +63,12 @@ class MapMarkers extends Component{
              <p>{park.location.formattedAddress[0] }</p>
              <p>{park.location.formattedAddress[1] }</p>
              <p>{park.location.formattedAddress[2] }</p>
-             <img src={foursquare} alt="powered by Foursquare" />
+             <img src={foursquare} alt="powered by Foursquare" className= "fourimg" />
              </div>
              </InfoWindow>
             )}
          }
    }
-
-
-  console.log('props', this.props)
-  console.log(this.state)
 
       return( //returns the markers
           showingMarkers.map((park =>(

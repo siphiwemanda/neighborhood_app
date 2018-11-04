@@ -13,9 +13,7 @@ class Listquery extends Component{
           showingParks=this.props.parks
       }
 
-      showingParks.sort(sortBy('location'))
-      console.log('props', this.props)
-      console.log(showingParks)
+      showingParks.sort(sortBy('location'))    
 
       if(!this.props.shownav){
       return null
@@ -38,7 +36,12 @@ class Listquery extends Component{
       <ol className='listofparks' aria-hidden="true"
           aria-label='A list of locations' >
           {showingParks.map((park)=>(
-            <li onClick={() => this.props.clickedpark(park) } onKeyDown={() => this.props.clickedpark(park) }
+            <li onClick={() => this.props.clickedpark(park) }
+            onKeyPress = {(e) => {
+        if(e.key === 'Enter'){
+            this.props.clickedpark(park)
+        }
+    }}
               key ={park.name} className = 'parkslist'tabIndex='0'>
               <div className= "parklistnames" >
               <p>{park.name} </p>
