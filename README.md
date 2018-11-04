@@ -1,4 +1,4 @@
-# parkrun finder near around Greater Manchester #
+# parkrun finder around Greater Manchester #
 
 # Description
 
@@ -7,7 +7,7 @@ Final Project created as part of the Udacity Front-End Developer Nanodegree.
 In this project a list of parkruns will appear over the Greater Manchester and outward area
 and will contain location information
 
-[parkrun](http://www.parkrun.org.uk/) is a free 5km run that happens allover the uk every Saturday at 9am
+[parkrun](http://www.parkrun.org.uk/) is a free 5km run that happens all over the UK every Saturday at 9am
 
 
 # Run the Application
@@ -26,18 +26,18 @@ Run npm run build to create a build version of the app that correctly bundles Re
 
 # Dependencies #
 
-# Packages
+#### Packages ####
 
 * [create-react-app](https://github.com/facebook/create-react-app)
 * [axios](https://github.com/axios/axios)
 
-# API
+#### API ####
 
 * Foursquare API
 * Google Maps API
 
 
-# References
-[Getting Googlemaps in React](https://medium.com/@yelstin.fernandes/render-a-map-component-using-react-google-maps-5f7fb3e418bb)
-[Passing Props](https://stackoverflow.com/questions/22639534/pass-props-to-parent-component-in-react-js)
-[Side Bar](https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_menu_icon_js)
+#### References ####
+* [Getting Googlemaps in React](https://medium.com/@yelstin.fernandes/render-a-map-component-using-react-google-maps-5f7fb3e418bb)
+* [Passing Props](https://stackoverflow.com/questions/22639534/pass-props-to-parent-component-in-react-js)
+* [Side Bar](https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_menu_icon_js)
