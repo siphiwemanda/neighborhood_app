@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import './index.css'
 import './header.css'
-
 import Map from './Comp/Map'
 import Header from './Comp/header'
 import Footer from './Comp/footer'
@@ -23,7 +22,7 @@ class App extends Component {
   componentDidMount(){
   this.getParks()
   }
-//creating all the states that alow the user to interact with the map, list and markers 
+//creating all the states that alow the user to interact with the map, list and markers
   updateQuery =(query)=>{
   this.setState({query:query.trim()})
   }
@@ -88,7 +87,7 @@ class App extends Component {
             containerElement={ <div style={{ height: `100vh`, width: '100vw' }}
             role="application"
             tabIndex="-1"
-            aria-label="Map showing the free runs in and around manchester"
+            aria-label="Map showing parkrus in Greater Manchester"
             /> }
             mapElement={ <div style={{ height: `100%` }} tabIndex="-1"/> }
             />

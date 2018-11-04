@@ -7,7 +7,7 @@ const Map = withScriptjs(withGoogleMap((props)=>{
    return(
       <GoogleMap
         defaultCenter = { {lat: 53.480759, lng: -2.242631} }
-        defaultZoom = { 9 }
+        defaultZoom = { 10 }
       >
         <MapMarkers
         query ={props.query}
