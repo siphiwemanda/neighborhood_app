@@ -70,7 +70,7 @@ clearPark =() =>{
       console.log(response)
    })
    .catch(error =>{
-     alert(`Sorry, can't get information from Foursquare due to error ${error}`)
+     alert('Sorry, cant get the information from Foursquare right now')
      console.log("ERROR" + error)
    })
  };
