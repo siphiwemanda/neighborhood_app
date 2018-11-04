@@ -4,29 +4,20 @@ import MapMarkers from './mapmarkers'
 
 
 const Map = withScriptjs(withGoogleMap((props)=>{
-
-
-
-
-
-return(
+   return(
       <GoogleMap
         defaultCenter = { {lat: 53.480759, lng: -2.242631} }
         defaultZoom = { 9 }
       >
         <MapMarkers
         query ={props.query}
-      parks={props.parks}
-      selectedpark={props.selectedpark}
-      resetpark ={props.resetpark.bind(this)}
-
-
-
+        parks={props.parks}
+        selectedpark={props.selectedpark}
+        resetpark ={props.resetpark.bind(this)}
      />
-      </GoogleMap>
+        </GoogleMap>
 
-   )
- }
+   )}
 ));
 
 
