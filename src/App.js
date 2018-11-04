@@ -56,11 +56,9 @@ class App extends Component {
      this.setState({
        parkruns: response.data.response.venues
      })
-      console.log(response)
    })
    .catch(error =>{
      alert('Sorry, cant get the information from Foursquare right now')
-     console.log("ERROR" + error)
    })}
 
   render() {
