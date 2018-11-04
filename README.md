@@ -1,11 +1,11 @@
-# parkrun finder near and around Manchester #
+# parkrun finder near around Greater Manchester #
 
 # Description
 
 Final Project created as part of the Udacity Front-End Developer Nanodegree.
 
-In this project a list of parkruns will appear over the great manchester area
-and will contain information about how to get there
+In this project a list of parkruns will appear over the Greater Manchester and outward area
+and will contain location information
 
 [parkrun](http://www.parkrun.org.uk/) is a free 5km run that happens allover the uk every Saturday at 9am
 
@@ -19,8 +19,7 @@ In order to run the application follow these steps:
 * Install all project dependencies with npm install
 * Start the development server with npm start
 
- Note about Service Worker Create React App, by default, includes a service worker. To enable it you must run the application in production build mode.
-
+Create React App, by default, includes a service worker. To enable it you must run the application in production build mode.
 * npm run build
 
 Run npm run build to create a build version of the app that correctly bundles React in production mode and optimizes the build for the best performance. It will cache the site and visited pages will be rendered when there is no network access.
