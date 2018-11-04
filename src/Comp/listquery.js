@@ -20,7 +20,7 @@ class Listquery extends Component{
       if(!this.props.shownav){
       return null
       }else {
-    return( //returns a matching park or fill's to whole list div 
+    return( //returns a matching park or fill's to whole list div
 
     <div>
       <nav className='menu_show'>
@@ -36,10 +36,10 @@ class Listquery extends Component{
         />
       </div>
       <ol className='listofparks' aria-hidden="true"
-          aria-label='A list of locations'>
+          aria-label='A list of locations' >
           {showingParks.map((park)=>(
-            <li onClick={() => this.props.clickedpark(park)}
-              key ={park.name} className = 'parkslist'>
+            <li onClick={() => this.props.clickedpark(park) } onKeyDown={() => this.props.clickedpark(park) }
+              key ={park.name} className = 'parkslist'tabIndex='0'>
               <div className= "parklistnames" >
               <p>{park.name} </p>
               </div>

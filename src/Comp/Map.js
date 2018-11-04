@@ -6,7 +6,7 @@ import MapMarkers from './mapmarkers'
 const Map = withScriptjs(withGoogleMap((props)=>{
    return(
       <GoogleMap
-        defaultCenter = { {lat: 53.480759, lng: -2.242631} }
+        defaultCenter = { {lat: 53.481385, lng: -2.242011} }
         defaultZoom = { 10 }
       >
         <MapMarkers

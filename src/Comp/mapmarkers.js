@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Marker, InfoWindow } from 'react-google-maps'
 import escapeRegExp from 'escape-string-regexp'
+import foursquare from '../img/foursquare.png'
 
 class MapMarkers extends Component{
 
@@ -39,6 +40,7 @@ class MapMarkers extends Component{
            <p>{park.location.formattedAddress[0] }</p>
            <p>{park.location.formattedAddress[1] }</p>
            <p>{park.location.formattedAddress[2] }</p>
+           <img src={foursquare} alt="powered by Foursquare" />
            </div>
           </InfoWindow>
       )}
@@ -60,6 +62,7 @@ class MapMarkers extends Component{
              <p>{park.location.formattedAddress[0] }</p>
              <p>{park.location.formattedAddress[1] }</p>
              <p>{park.location.formattedAddress[2] }</p>
+             <img src={foursquare} alt="powered by Foursquare" />
              </div>
              </InfoWindow>
             )}
@@ -70,7 +73,7 @@ class MapMarkers extends Component{
   console.log('props', this.props)
   console.log(this.state)
 
-      return( //returns the markers 
+      return( //returns the markers
           showingMarkers.map((park =>(
             <Marker
               key={park.id}
@@ -79,6 +82,7 @@ class MapMarkers extends Component{
               onClick={() => this.openedmarker(park)}
               passing={windowmod(park)}
               animation={animation}
+              tabIndex='0'
             >
           {infoWindow}
           </Marker>
