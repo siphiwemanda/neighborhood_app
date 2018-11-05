@@ -63,10 +63,6 @@ class App extends Component {
 
 
   render() {
-    if(this.state.Failed === true){
-      alert('Sorry googlemaps is not working right now')
-    }
-
     return (
       <div className="App">
       <main>
