@@ -10,18 +10,19 @@ import Listquery from './Comp/listquery'
 
 
 class App extends Component {
-
   state ={
     parkruns:[],
     query:'',
     shownav: false,
     click: false,
     ClickedID: null,
+    Failed: false
     }
 
   componentDidMount(){
   this.getParks()
   }
+
 //creating all the states that alow the user to interact with the map, list and markers
   updateQuery =(query)=>{
   this.setState({query:query.trim()})
@@ -39,6 +40,7 @@ class App extends Component {
   clearPark =() =>{
   this.setState({ClickedID: null})
   }
+
 
 
 //get Parkruns from Foursquare
@@ -61,7 +63,13 @@ class App extends Component {
      alert('Sorry, cant get the information from Foursquare right now')
    })}
 
+
+
   render() {
+    if(this.state.Failed === true){
+      console.log('beep')
+    }
+
     return (
       <div className="App">
       <main>
@@ -75,6 +83,10 @@ class App extends Component {
             shownav={this.state.shownav}
             clickedpark={this.Updatepark.bind(this)}
             />
+            {
+              (!navigator.onLine) &&
+              (<h1> Sorry! Somethings gone wrong. Check your connection and try again.</h1>)
+            }
      <Map
             parks={this.state.parkruns}
             query ={this.state.query}
@@ -89,6 +101,7 @@ class App extends Component {
             /> }
             mapElement={ <div style={{ height: `100%` }} tabIndex="-1"/> }
             />
+
      <Footer></Footer>
      </main>
      </div>
