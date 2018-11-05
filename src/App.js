@@ -16,7 +16,6 @@ class App extends Component {
     shownav: false,
     click: false,
     ClickedID: null,
-    Failed: false
     }
 
   componentDidMount(){
@@ -40,8 +39,6 @@ class App extends Component {
   clearPark =() =>{
   this.setState({ClickedID: null})
   }
-
-
 
 //get Parkruns from Foursquare
   getParks=() =>{
@@ -67,7 +64,7 @@ class App extends Component {
 
   render() {
     if(this.state.Failed === true){
-      console.log('beep')
+      alert('Sorry googlemaps is not working right now')
     }
 
     return (
@@ -101,7 +98,6 @@ class App extends Component {
             /> }
             mapElement={ <div style={{ height: `100%` }} tabIndex="-1"/> }
             />
-
      <Footer></Footer>
      </main>
      </div>

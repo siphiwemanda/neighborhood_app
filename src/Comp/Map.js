@@ -9,9 +9,6 @@ const Map = withScriptjs(withGoogleMap((props)=>{
       <GoogleMap
         defaultCenter = { {lat: 53.481385, lng: -2.242011} }
         defaultZoom = { 10 }
-        //onerror={() => this.error, console.log('me')}
-
-
       >
         <MapMarkers
         query ={props.query}
@@ -20,8 +17,6 @@ const Map = withScriptjs(withGoogleMap((props)=>{
         resetpark ={props.resetpark.bind(this)}
      />
         </GoogleMap>
-
-
    )}
 
 ));
