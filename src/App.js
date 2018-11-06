@@ -7,6 +7,7 @@ import Header from './Comp/header'
 import Footer from './Comp/footer'
 import axios from 'axios'
 import Listquery from './Comp/listquery'
+import swal from 'sweetalert2';
 
 
 class App extends Component {
@@ -57,7 +58,7 @@ class App extends Component {
      })
    })
    .catch(error =>{
-     alert('Sorry, cant get the information from Foursquare right now')
+     swal("Sorry!", "Look's like Foursquare failed to load!", "warning");
    })}
 
 
@@ -76,24 +77,27 @@ class App extends Component {
             shownav={this.state.shownav}
             clickedpark={this.Updatepark.bind(this)}
             />
+
             {
-              (!navigator.onLine) &&
-              (<h1> Sorry! Somethings gone wrong. Check your connection and try again.</h1>)
+             (!navigator.onLine) &&
+             (<h1> Sorry! Somethings gone wrong. Check your connection and try again.</h1>)
             }
-     <Map
-            parks={this.state.parkruns}
-            query ={this.state.query}
-            selectedpark={this.state.ClickedID}
-            resetpark ={this.clearPark.bind(this)}
-            googleMapURL='https://maps.googleapis.com/maps/api/js?key=AIzaSyBndej0CC1LX31Kl_eo1JgkVz-BpWjVADo'
-            loadingElement={<div  style={{ height: `100%` }}tabIndex="-1"/>}
-            containerElement={ <div style={{ height: `100vh`, width: '100vw' }}
-            role="application"
-            tabIndex="-1"
-            aria-label="Map showing parkrus in Greater Manchester"
-            /> }
-            mapElement={ <div style={{ height: `100%` }} tabIndex="-1"/> }
-            />
+
+    <Map
+           parks={this.state.parkruns}
+           query ={this.state.query}
+           selectedpark={this.state.ClickedID}
+           resetpark ={this.clearPark.bind(this)}
+           googleMapURL='https://maps.googleapis.com/maps/api/js?key=AIzaSyBndej0CC1LX31Kl_eo1JgkVz-BpWjVADo'
+           loadingElement={<div  style={{ height: `100%` }}tabIndex="-1"/>}
+           containerElement={ <div style={{ height: `100vh`, width: '100vw' }}
+           role="application"
+           tabIndex="-1"
+           aria-label="Map showing parkrus in Greater Manchester"
+           /> }
+           mapElement={ <div style={{ height: `100%` }} tabIndex="-1"/> }
+           />
+
      <Footer></Footer>
      </main>
      </div>
