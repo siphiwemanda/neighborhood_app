@@ -76,24 +76,27 @@ class App extends Component {
             shownav={this.state.shownav}
             clickedpark={this.Updatepark.bind(this)}
             />
+
             {
-              (!navigator.onLine) &&
-              (<h1> Sorry! Somethings gone wrong. Check your connection and try again.</h1>)
+             (!navigator.onLine) &&
+             (<h1> Sorry! Somethings gone wrong. Check your connection and try again.</h1>)
             }
-     <Map
-            parks={this.state.parkruns}
-            query ={this.state.query}
-            selectedpark={this.state.ClickedID}
-            resetpark ={this.clearPark.bind(this)}
-            googleMapURL='https://maps.googleapis.com/maps/api/js?key=AIzaSyBndej0CC1LX31Kl_eo1JgkVz-BpWjVADo'
-            loadingElement={<div  style={{ height: `100%` }}tabIndex="-1"/>}
-            containerElement={ <div style={{ height: `100vh`, width: '100vw' }}
-            role="application"
-            tabIndex="-1"
-            aria-label="Map showing parkrus in Greater Manchester"
-            /> }
-            mapElement={ <div style={{ height: `100%` }} tabIndex="-1"/> }
-            />
+
+    <Map
+           parks={this.state.parkruns}
+           query ={this.state.query}
+           selectedpark={this.state.ClickedID}
+           resetpark ={this.clearPark.bind(this)}
+           googleMapURL='https://maps.googleapis.com/maps/api/js?key=AIzaSyBndej0CC1LX31Kl_eo1JgkVz-BpWjVAD'
+           loadingElement={<div  style={{ height: `100%` }}tabIndex="-1"/>}
+           containerElement={ <div style={{ height: `100vh`, width: '100vw' }}
+           role="application"
+           tabIndex="-1"
+           aria-label="Map showing parkrus in Greater Manchester"
+           /> }
+           mapElement={ <div style={{ height: `100%` }} tabIndex="-1"/> }
+           />
+
      <Footer></Footer>
      </main>
      </div>
