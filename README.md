@@ -30,6 +30,7 @@ Run npm run build to create a build version of the app that correctly bundles Re
 
 * [create-react-app](https://github.com/facebook/create-react-app)
 * [axios](https://github.com/axios/axios)
+* [sweetalert2](https://sweetalert.js.org/guides/)
 
 #### API ####
 

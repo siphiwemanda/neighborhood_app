@@ -1,20 +1,14 @@
 import React from 'react';
 import { withGoogleMap, GoogleMap, withScriptjs } from 'react-google-maps';
 import MapMarkers from './mapmarkers'
-import { withSwalInstance } from 'sweetalert2-react';
 import swal from 'sweetalert2';
 
-const SweetAlert = withSwalInstance(swal);
 
 const Map = withScriptjs(withGoogleMap((props)=>{
 
   window.gm_authFailure = () => {
-    swal({
-  title: "Error",
-  text: "The google Maps API has failed to load",
-  icon: "error",
-});
-}
+    swal("Sorry!", "Look's like GoogleMaps failed to load!", "warning");
+    }
 
    return(
       <GoogleMap
@@ -28,8 +22,7 @@ const Map = withScriptjs(withGoogleMap((props)=>{
         resetpark ={props.resetpark.bind(this)}
      />
         </GoogleMap>
-   )}
-
+      )}
 ));
 
 
