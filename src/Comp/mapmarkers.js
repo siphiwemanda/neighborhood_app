@@ -7,31 +7,31 @@ class MapMarkers extends Component{
 
     state={
       open: null,
-    }
+    };
 
     openedmarker = (park)=>{
       this.setState({open: park})
-    }
+    };
 
 
     render(){
-        let showingMarkers //filters throught the markers and matches them with the query state
+        let showingMarkers; //filters through the markers and matches them with the query state
         if(this.props.query){
-        const match = new RegExp(escapeRegExp(this.props.query), 'i')
+        const match = new RegExp(escapeRegExp(this.props.query), 'i');
         showingMarkers = this.props.parks.filter((park)=> match.test(park.name))
         }else{
         showingMarkers=this.props.parks
         }
 
-        let animation = 0
-        let infoWindow = null
+        let animation = 0;
+        let infoWindow = null;
 
         const parkinfo =(park) =>{
-        infoWindow = null //when a park is clicked in the list bouces the marker and info window pops up
+        infoWindow = null; //when a park is clicked in the list bounces the marker and info window pops up
         if(this.props.selectedpark != null){
 
         if(park.id === this.props.selectedpark.id){
-        animation=1
+        animation=1;
         infoWindow =(
           <InfoWindow onCloseClick ={()=> {
               this.props.resetpark(park)
@@ -48,7 +48,7 @@ class MapMarkers extends Component{
         else{
        animation=0
       }}
-    }
+    };
         //when a mark is clicked in the map page info window pops up
         const windowmod = (park) =>{
           if (this.state.open != null){
@@ -68,7 +68,7 @@ class MapMarkers extends Component{
              </InfoWindow>
             )}
          }
-   }
+   };
 
       return( //returns the markers
           showingMarkers.map((park =>(
