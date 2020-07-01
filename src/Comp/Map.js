@@ -8,7 +8,7 @@ const Map = withScriptjs(withGoogleMap((props)=>{
 
   window.gm_authFailure = () => {
     swal("Sorry!", "Look's like GoogleMaps failed to load!", "warning");
-    }
+    };
 
    return(
       <GoogleMap
@@ -24,6 +24,5 @@ const Map = withScriptjs(withGoogleMap((props)=>{
         </GoogleMap>
       )}
 ));
-
 
 export default Map;

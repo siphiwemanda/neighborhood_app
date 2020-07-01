@@ -9,9 +9,9 @@ class Header extends Component{
     		    <div className="top">
     		     <button tabIndex='0' aria-label= 'open list'  onClick={(e) => this.props.navbtn(e)} >
                <div className="container">
-               <div className="bar1"></div>
-               <div className="bar2"></div>
-               <div className="bar3"></div>
+               <div className="bar1"/>
+               <div className="bar2"/>
+               <div className="bar3"/>
                </div>
               </button>
             </div>

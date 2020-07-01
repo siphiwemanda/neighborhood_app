@@ -17,20 +17,20 @@ class App extends Component {
     shownav: false,
     click: false,
     ClickedID: null,
-    }
+    };
 
   componentDidMount(){
   this.getParks()
   }
 
-//creating all the states that alow the user to interact with the map, list and markers
+//creating all the states that allow the user to interact with the map, list and markers
   updateQuery =(query)=>{
   this.setState({query:query.trim()})
-  }
+  };
 
   Updatepark = (park)=>{
   this.setState({ClickedID:park})
-  }
+  };
 
   navBarbtn() {
   this.setState(prevState => ({
@@ -39,11 +39,11 @@ class App extends Component {
 
   clearPark =() =>{
   this.setState({ClickedID: null})
-  }
+  };
 
 //get Parkruns from Foursquare
   getParks=() =>{
-   const endPoint = "https://api.foursquare.com/v2/venues/search?"
+   const endPoint = "https://api.foursquare.com/v2/venues/search?";
    const parameters = {
      client_id: "3VL5IFAPPVNRM2GDM0DRZAK3FJOSRDT0PSUGSFYQPRGVNGKC",
      client_secret: "JPWH0GDPUWAHMBUU3PQ4B1QWJN3OI2PMWLXJ2JDKI0PCUA1M",
@@ -59,7 +59,7 @@ class App extends Component {
    })
    .catch(error =>{
      swal("Sorry!", "Look's like Foursquare failed to load!", "warning");
-   })}
+   })};
 
 
 
@@ -98,14 +98,11 @@ class App extends Component {
            mapElement={ <div style={{ height: `100%` }} tabIndex="-1"/> }
            />
 
-     <Footer></Footer>
+     <Footer/>
      </main>
      </div>
     );
   }
 }
-
-
-
 
 export default App;

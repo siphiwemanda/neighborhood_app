@@ -4,7 +4,7 @@ import sortBy from 'sort-by'
 
 class Listquery extends Component{
   render(){
-      let showingParks //Filters throught the parks Array to create querry matches
+      let showingParks //Filters though the parks Array to create querry matches
       if(this.props.query){
           const match = new RegExp(escapeRegExp(this.props.query), 'i')
           showingParks = this.props.parks.filter((park)=> match.test(park.name))
